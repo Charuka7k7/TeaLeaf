@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tea Types - TeaLeaf.lk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#a3f69c",
+                    "on-tertiary-container": "#f3f3da",
+                    "secondary-fixed": "#ffdbce",
+                    "primary-fixed-dim": "#88d982",
+                    "tertiary": "#555744",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "surface": "#fbf9f8",
+                    "outline": "#707a6c",
+                    "on-primary-container": "#cbffc2",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "surface-container": "#f0eded",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fbf9f8",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-primary-fixed": "#002204",
+                    "secondary": "#75584d",
+                    "secondary-fixed-dim": "#e4beb2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#795c51",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#40493d",
+                    "tertiary-container": "#6e6f5b",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "tertiary-fixed": "#e4e4cc",
+                    "surface-bright": "#fbf9f8",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#fed7ca",
+                    "inverse-primary": "#88d982",
+                    "on-secondary-fixed-variant": "#5b4137",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "on-background": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#2b160f",
+                    "outline-variant": "#bfcaba",
+                    "surface-container-low": "#f5f3f3",
+                    "primary-container": "#2e7d32",
+                    "primary": "#0d631b",
+                    "surface-dim": "#dcd9d9",
+                    "surface-tint": "#1b6d24",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "on-surface": "#1b1c1c",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "button": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(46, 125, 50, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-stone-200 dark:border-stone-800 bg-[#FDFBF7] dark:bg-stone-950 shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+<div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+<div class="text-2xl font-bold text-[#2E7D32] dark:text-green-500 tracking-tighter font-h1">
+<a href="index.html">
+          <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+        </a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight" href="index.html">Home</a>
+<a class="text-[#2E7D32] dark:text-green-400 font-bold border-b-2 border-[#2E7D32] pb-1 font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="#">Tea Types</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight" href="cultivation.html">Cultivation</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight" href="contact.html">Contact</a>
+</div>
+<a href="contact.html">
+        <button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-primary transition-colors active:scale-95 transition-transform">
+          Plan Visit
+        </button>
+      </a>
+</div>
+
+</nav>
+<main class="mt-20 pt-16 pb-24 max-w-[1280px] mx-auto px-6 md:px-12">
+<!-- Header Section -->
+<header class="mb-16 text-center max-w-2xl mx-auto">
+<span class="text-primary font-label-caps tracking-widest uppercase mb-4 block">Our Collections</span>
+<h1 class="font-h1 text-h1 text-on-background mb-6"> Sri Lankan Tea Varietals</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Explore the diverse varieties of Ceylon tea, from the robust depths of fermented black tea to the delicate, hand-picked silver tips.</p>
+</header>
+
+    <!-- Tea Types Grid Section -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="mb-12 text-center">
+          <h2 class="font-h2 text-h2 text-on-background mb-4">Types of Ceylon Tea</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+            From delicate white teas to robust black blends, Ceylon tea offers an extraordinary range of flavors shaped by altitude, climate, and craftsmanship.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+          <!-- Black Tea -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+              <a href="blacktea.html"><img alt="Black Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/black-tea-cup.png"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Most Popular</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">Black Tea</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Fully oxidized leaves that produce a rich, bold cup with a deep amber color. The backbone of Ceylon tea exports, enjoyed worldwide with or without milk.
+              </p>
+            </div>
+          </div>
+
+          <!-- Green Tea -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+              <a href="greentea.html"><img alt="Green Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/green-tea.webp"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Unoxidized</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">Green Tea</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Minimal processing preserves the natural green color and grassy, vegetal notes. Rich in antioxidants and prized for its health benefits and delicate flavor.
+              </p>
+            </div>
+          </div>
+
+          <!-- White Tea -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+               <a href="whitetea.html"><img alt="White Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/white-tea.jpeg"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Most Delicate</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">White Tea</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Made from young buds and leaves with minimal oxidation. Ceylon white teas are celebrated for their sweet, subtle flavor and exceptional rarity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Oolong Tea -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+              <a href="oolongtea.html"><img alt="Oolong Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/oolong-tea.jpg"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Partially Oxidized</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">Oolong Tea</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Sitting between green and black tea, oolong offers a complex flavour profile with floral and fruity notes a true connoisseur's choice from the highlands.
+              </p>
+            </div>
+          </div>
+
+          <!-- Silver Tips -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+              <a href="silvertips.html"><img alt="Silver Tips Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/silvertips-tea.jpeg"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Ultra Premium</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">Silver Tips</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Harvested only on full moon nights, Silver Tips are the rarest Ceylon tea. The delicate silver buds produce a light, honeyed liquor with extraordinary sweetness.
+              </p>
+            </div>
+          </div>
+
+          <!-- Flavoured Tea -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+            <div class="h-52 overflow-hidden">
+              <a href="flavouredtea.html"><img alt="Flavoured Tea" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="images/Flavourdetea.webp"/></a>
+            </div>
+            <div class="p-6">
+              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-3">Blended</span>
+              <h3 class="font-h3 text-h3 text-on-background mb-2">Flavoured Tea</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Ceylon's robust black tea base pairs magnificently with natural flavors from zesty citrus to warming spices creating beloved blends enjoyed across the globe.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+<!-- Call to Action Section -->
+<section class="mt-xl bg-surface-container rounded-xl p-md md:p-xl flex flex-col md:flex-row items-center gap-lg">
+<div class="md:w-1/2">
+<h2 class="font-h2 text-h2 mb-4">Discover the perfect brew for your palate</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Our experts can help you select the ideal tea based on your flavor preferences and the time of day.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-button">Download Tasting Guide</button>
+<button class="bg-transparent border border-primary text-primary px-8 py-3 rounded-lg font-button hover:bg-primary/5">View All Blends</button>
+</div>
+</div>
+<div class="md:w-1/2 rounded-xl overflow-hidden shadow-lg h-64 md:h-80 w-full">
+<img alt="Tea tasting session" class="w-full h-full object-cover" src="images/tea-pot.webp">
+</div>
+</section>
+</main>
+<!-- ── Footer ── -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="#">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body></html>
