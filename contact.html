@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- FIXED: correct title -->
+  <title>Contact Us - TeaLeaf.lk</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- FIXED: corrected font URL (was Plus_Jakarta+Sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#a3f69c",
+            "on-tertiary-container": "#f3f3da",
+            "secondary-fixed": "#ffdbce",
+            "primary-fixed-dim": "#88d982",
+            "tertiary": "#555744",
+            "on-primary-fixed-variant": "#005312",
+            "on-tertiary-fixed": "#1b1d0e",
+            "surface": "#fbf9f8",
+            "outline": "#707a6c",
+            "on-primary-container": "#cbffc2",
+            "on-tertiary-fixed-variant": "#474836",
+            "surface-container": "#f0eded",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e4e2e1",
+            "surface-container-lowest": "#ffffff",
+            "background": "#fbf9f8",
+            "inverse-on-surface": "#f2f0f0",
+            "on-primary-fixed": "#002204",
+            "secondary": "#75584d",
+            "secondary-fixed-dim": "#e4beb2",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#795c51",
+            "error": "#ba1a1a",
+            "on-surface-variant": "#40493d",
+            "tertiary-container": "#6e6f5b",
+            "on-error": "#ffffff",
+            "surface-variant": "#e4e2e1",
+            "tertiary-fixed": "#e4e4cc",
+            "surface-bright": "#fbf9f8",
+            "inverse-surface": "#303030",
+            "secondary-container": "#fed7ca",
+            "inverse-primary": "#88d982",
+            "on-secondary-fixed-variant": "#5b4137",
+            "tertiary-fixed-dim": "#c8c8b0",
+            "on-background": "#1b1c1c",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed": "#2b160f",
+            "outline-variant": "#bfcaba",
+            "surface-container-low": "#f5f3f3",
+            "primary-container": "#2e7d32",
+            "primary": "#0d631b",
+            "surface-dim": "#dcd9d9",
+            "surface-tint": "#1b6d24",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#eae8e7",
+            "on-surface": "#1b1c1c",
+            "error-container": "#ffdad6"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "base": "8px",
+            "container-max": "1280px",
+            "md": "24px",
+            "xs": "4px",
+            "sm": "12px",
+            "gutter": "24px",
+            "xl": "64px",
+            "lg": "40px"
+          },
+          fontFamily: {
+            "h1": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "button": ["Plus Jakarta Sans"],
+            "label-caps": ["Plus Jakarta Sans"],
+            "h2": ["Plus Jakarta Sans"],
+            "h3": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "h1": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" }],
+            "button": ["14px", { lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "600" }],
+            "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "700" }],
+            "h2": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "h3": ["24px", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.3) 50%, rgba(251,249,248,1) 100%);
+    }
+    /* Form focus styles */
+    .form-input:focus {
+      outline: none;
+      border-color: #2e7d32;
+      box-shadow: 0 0 0 3px rgba(46,125,50,0.15);
+    }
+    /* Success message */
+    #success-msg { display: none; }
+    #success-msg.show { display: flex; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+
+  <!-- Top Navigation -->
+  <nav class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] dark:bg-stone-950 shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+    <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+      <div class="flex items-center">
+        <a href="index.html">
+          <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+        </a>
+      </div>
+      <!-- FIXED: updated navigation links to .html files -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="index.html">Home</a>
+        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="teatypes.html">Tea Types</a>
+        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="cultivation.html">Cultivation</a>
+        <a class="font-['Plus_Jakarta_Sans'] text-sm pb-1 text-[#2E7D32] dark:text-green-400 font-bold border-b-2 border-[#2E7D32]"  href="#">Contact</a>
+      </div>
+      <!-- FIXED: updated CTA link to index.html -->
+      <a href="index.html">
+        <button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-primary transition-colors active:scale-95 transition-transform">
+          Discover Tea
+        </button>
+      </a>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative h-[420px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Sri Lankan Tea Plantation" class="w-full h-full object-cover" src="images/contactus.jpg"/>
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 text-center">
+        <span class="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-widest bg-primary-fixed/30 inline-block px-3 py-1 rounded-full">Get In Touch</span>
+        <h1 class="font-h1 text-h1 text-white mb-4 max-w-3xl mx-auto">
+          Plan Your Estate Visit
+        </h1>
+        <p class="font-body-lg text-body-lg text-white max-w-xl mx-auto">
+          We'd love to welcome you. Reach out to book a tour, ask about Ceylon tea, or simply say hello.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Contact Section ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+
+          <!-- Left: Contact Info -->
+          <div>
+            <h2 class="font-h2 text-h2 text-on-background mb-4">Contact Information</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">
+              Whether you'd like to book a guided estate tour, inquire about our tea varieties, or learn more about Sri Lanka's tea heritage, our team is here to help.
+            </p>
+
+            <div class="space-y-6">
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 bg-primary-fixed rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-fixed-variant">location_on</span>
+                </div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Estate Address</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant"> Leafora Tea Co, Badulla District,<br/>Uva Province, Sri Lanka</p>
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 bg-primary-fixed rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-fixed-variant">phone</span>
+                </div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Phone</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">+94 76 850 4108</p>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 bg-primary-fixed rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-fixed-variant">mail</span>
+                </div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Email</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">hello@tealeaf.lk</p>
+                </div>
+              </div>
+              <!-- Hours -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 flex-shrink-0 bg-primary-fixed rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-primary-fixed-variant">schedule</span>
+                </div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Visiting Hours</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Monday – Saturday: 8:00 AM – 5:00 PM<br/>Sunday: 9:00 AM – 3:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visit Types -->
+            <div class="mt-10 bg-surface-container-low rounded-xl p-6">
+              <h3 class="font-h3 text-h3 text-on-background mb-4">Tour Options</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Garden Walk and Tasting to 2 hours</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Factory Tour and Processing to 3 hours</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Full Day Heritage Experience — 6 hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="bg-surface-container-low rounded-2xl p-8 border border-surface-container">
+            <h2 class="font-h2 text-h2 text-on-background mb-2">Send Us a Message</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+            <!-- Success Message -->
+            <div id="success-msg" class="items-center gap-3 bg-primary-fixed/30 border border-primary text-primary rounded-xl px-6 py-4 mb-6">
+              <span class="material-symbols-outlined text-2xl">check_circle</span>
+              <p class="font-button text-button">Thank you! Your message has been sent. We'll be in touch soon.</p>
+            </div>
+
+            <div id="contact-form" class="space-y-5">
+              <!-- Full Name -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="name">Full Name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="e.g. Kasun Perera"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all"
+                />
+              </div>
+              <!-- Email -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="email">Email Address *</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="kasun@gmail.com"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all"
+                />
+              </div>
+              <!-- Phone -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="+94 71 234 5678"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all"
+                />
+              </div>
+              <!-- Tour Type -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="tour">Interested In</label>
+                <select
+                  id="tour"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all appearance-none cursor-pointer"
+                >
+                  <option value="">Select an option…</option>
+                  <option value="garden">Garden Walk and Tasting</option>
+                  <option value="factory">Factory Tour and Processing</option>
+                  <option value="full">Full Day Heritage Experience</option>
+                  <option value="general">General Enquiry</option>
+                </select>
+              </div>
+              <!-- Preferred Date -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="date">Preferred Visit Date</label>
+                <input
+                  id="date"
+                  type="date"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all"
+                />
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="message">Message *</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  placeholder="Tell us about your group size, any special requirements, or questions you have…"
+                  class="form-input w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-on-surface font-body-sm text-body-sm transition-all resize-none"
+                ></textarea>
+              </div>
+              <!-- Error message -->
+              <p id="form-error" class="text-error font-body-sm text-body-sm hidden">Please fill in all required fields.</p>
+              <!-- Submit -->
+              <button
+                onclick="submitForm()"
+                class="w-full bg-primary text-on-primary py-4 rounded-lg font-button text-button hover:bg-primary-container transition-colors active:scale-95 transition-transform"
+              >
+                Send Message
+              </button>
+              <p class="font-body-sm text-body-sm text-on-surface-variant text-center">
+                Or email us directly at <a href="mailto:hello@tealeafhub.lk" class="text-primary underline">hello@tealeaf.lk</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Map / Location Banner -->
+    <section class="bg-surface-container-low py-xl">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-10">
+          <h2 class="font-h2 text-h2 text-on-background mb-3">Find Us on the Island</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+            Our estates are nestled in the heart of Sri Lanka's tea country, easily accessible from Uva Province.
+          </p>
+        </div>
+        <!-- Stylised location card -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-surface-container text-center shadow-sm">
+            <span class="material-symbols-outlined text-primary text-4xl mb-3 block">flight</span>
+            <h4 class="font-h3 text-h3 text-on-background mb-1">From Colombo Airport</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">~5 hours by road via the sourthern Expressway</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-surface-container text-center shadow-sm">
+            <span class="material-symbols-outlined text-primary text-4xl mb-3 block">train</span>
+            <h4 class="font-h3 text-h3 text-on-background mb-1">By Scenic Railway</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Colombo → Kandy → Badulla (the world-famous hill country train)</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-surface-container text-center shadow-sm">
+            <span class="material-symbols-outlined text-primary text-4xl mb-3 block">directions_car</span>
+            <h4 class="font-h3 text-h3 text-on-background mb-1">From badulla City</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">~15 minutes by car, with scenic highland roads</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="#">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved
+      </p>
+    </div>
+  </footer>
+
+  <!-- Form Script -->
+  <script>
+    function submitForm() {
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const errEl   = document.getElementById('form-error');
+
+      if (!name || !email || !message) {
+        errEl.classList.remove('hidden');
+        return;
+      }
+      errEl.classList.add('hidden');
+
+      // Hide form, show success
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').classList.add('show');
+    }
+  </script>
+
+</body>
+</html>

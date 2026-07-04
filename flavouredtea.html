@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Flavoured Tea - TeaLeaf.lk</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#a3f69c", "on-tertiary-container": "#f3f3da",
+            "secondary-fixed": "#ffdbce", "primary-fixed-dim": "#88d982",
+            "tertiary": "#555744", "on-primary-fixed-variant": "#005312",
+            "on-tertiary-fixed": "#1b1d0e", "surface": "#fbf9f8",
+            "outline": "#707a6c", "on-primary-container": "#cbffc2",
+            "on-tertiary-fixed-variant": "#474836", "surface-container": "#f0eded",
+            "on-tertiary": "#ffffff", "surface-container-highest": "#e4e2e1",
+            "surface-container-lowest": "#ffffff", "background": "#fbf9f8",
+            "inverse-on-surface": "#f2f0f0", "on-primary-fixed": "#002204",
+            "secondary": "#75584d", "secondary-fixed-dim": "#e4beb2",
+            "on-secondary": "#ffffff", "on-secondary-container": "#795c51",
+            "error": "#ba1a1a", "on-surface-variant": "#40493d",
+            "tertiary-container": "#6e6f5b", "on-error": "#ffffff",
+            "surface-variant": "#e4e2e1", "tertiary-fixed": "#e4e4cc",
+            "surface-bright": "#fbf9f8", "inverse-surface": "#303030",
+            "secondary-container": "#fed7ca", "inverse-primary": "#88d982",
+            "on-secondary-fixed-variant": "#5b4137", "tertiary-fixed-dim": "#c8c8b0",
+            "on-background": "#1b1c1c", "on-error-container": "#93000a",
+            "on-secondary-fixed": "#2b160f", "outline-variant": "#bfcaba",
+            "surface-container-low": "#f5f3f3", "primary-container": "#2e7d32",
+            "primary": "#0d631b", "surface-dim": "#dcd9d9",
+            "surface-tint": "#1b6d24", "on-primary": "#ffffff",
+            "surface-container-high": "#eae8e7", "on-surface": "#1b1c1c",
+            "error-container": "#ffdad6"
+          },
+          spacing: {
+            "xs": "4px", "sm": "12px", "base": "8px", "md": "24px",
+            "gutter": "24px", "lg": "40px", "xl": "64px"
+          },
+          fontFamily: {
+            "h1": ["Plus Jakarta Sans"], "h2": ["Plus Jakarta Sans"],
+            "h3": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"],
+            "button": ["Plus Jakarta Sans"], "label-caps": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "h1":        ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "h2":        ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "h3":        ["24px", { lineHeight: "1.4", letterSpacing: "0",       fontWeight: "600" }],
+            "body-lg":   ["18px", { lineHeight: "1.6", letterSpacing: "0",       fontWeight: "400" }],
+            "body-md":   ["16px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
+            "body-sm":   ["14px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
+            "button":    ["14px", { lineHeight: "1.0", letterSpacing: "0.02em",  fontWeight: "600" }],
+            "label-caps":["12px", { lineHeight: "1.0", letterSpacing: "0.05em",  fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .hero-gradient { background: linear-gradient(to bottom, rgba(0,0,0,0.60), rgba(0,0,0,0.30) 50%, rgba(251,249,248,1) 100%); }
+  </style>
+</head>
+<body class="bg-background text-on-background">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+    <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+      <a href="index.html">
+        <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors duration-200" href="index.html">Home</a>
+        <a class="text-sm font-bold text-[#2E7D32] border-b-2 border-[#2E7D32] pb-1" href="teatypes.html">Tea Types</a>
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors duration-200" href="cultivation.html">Cultivation</a>
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors duration-200" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html">
+        <button class="bg-[#2e7d32] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#0d631b] transition-colors active:scale-95">
+          Plan Visit
+        </button>
+      </a>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+
+    <!-- ── Hero ── -->
+    <section class="relative h-[500px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Flavoured Tea" class="w-full h-full object-cover" src="images/Flavourdetea.webp"/>
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 text-center px-6">
+        <a href="teatypes.html" class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white mb-4 transition-colors">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> All Tea Types
+        </a>
+        <div class="mt-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#0d631b] bg-[#a3f69c]/30 inline-block px-3 py-1 rounded-full mb-4">Blended</span>
+        </div>
+        <h1 class="font-h1 text-h1 text-white mb-3">Flavoured Tea</h1>
+        <p class="text-lg text-white/90 max-w-xl mx-auto">
+          Ceylon's bold black tea base meets the world's finest natural ingredients — spices, fruits, flowers, and herbs — creating beloved blends enjoyed across the globe.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Quick Stats ── -->
+    <section class="bg-primary py-8">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-on-primary">
+          <div>
+            <p class="text-3xl font-bold">100+</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Flavour Variants</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold">3–5 min</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Brew Time</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold">90–95°C</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Water Temp</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold">Natural</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Ingredients Only</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Overview ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <div>
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">Overview</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-6">When Ceylon Tea Meets the World</h2>
+            <div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
+              <p>Flavoured tea is the art of combining Ceylon's exceptional black, green, or white tea base with natural botanicals, aromatic spices, tropical fruits, dried flowers, herbs, and citrus peels, to create blends that are more than the sum of their parts.</p>
+              <p>Sri Lanka's flavoured teas are celebrated worldwide because the Ceylon base is so clean, bright, and assertive that it carries additional flavors beautifully without losing its own character. Unlike teas from other origins that can taste muddy or muted when blended, Ceylon tea holds its own, creating harmonious, vibrant combinations.</p>
+              <p>From the warming comfort of a Masala Chai to the exotic brightness of a Citrus Earl Grey, or the cooling freshness of a Mint Green blend, Ceylon flavoured teas span the entire spectrum of human taste preference, making them the most gifted and the most gifting of all tea categories.</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-6 -right-6 w-48 h-48 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+            <img alt="Flavoured Tea Selection" class="relative z-10 rounded-2xl shadow-xl w-full aspect-[4/3] object-cover" src="images/flavouredteacups.webp"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Popular Blends Showcase ── -->
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-12">
+          <span class="font-label-caps text-label-caps text-secondary block mb-3">Most Loved Blends</span>
+          <h2 class="font-h2 text-h2 text-on-background mb-4">Six Signature Ceylon Flavoured Teas</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+            Each blend starts with Sri Lanka's finest highland tea and is paired with the most compatible natural flavour to create something truly memorable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+         <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+  <!-- Masala Chai -->
+
+		  <div class="h-44 flex items-center justify-center overflow-hidden">
+		    <img src="images/masalachaitea.webp" alt="Masala Chai" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Spiced</span>
+		      <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Black Base</span>
+		    </div>
+		    
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Masala Chai</h3>
+		    
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      The king of flavoured teas. Ceylon's robust black tea is blended with ground cardamom, cinnamon, ginger, cloves, and black pepper. Warming, aromatic, and deeply satisfying — best brewed with milk and a little sweetness.
+		    </p>
+		    
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Cardamom · Ginger · Cinnamon · Cloves · Pepper</p>
+		    </div>
+		  </div>
+		</div>
+
+
+          <!-- Earl Grey Ceylon -->
+          <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+		  <div class="h-44 flex items-center justify-center overflow-hidden bg-gray-100">
+		    <img src="images/earlgreytea.jpeg" alt="Earl Grey Ceylon" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Citrus</span>
+		      <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Black Base</span>
+		    </div>
+		
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Earl Grey Ceylon</h3>
+		
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      The world's most famous flavoured tea reimagined with Ceylon's bright highland black tea. Cold-pressed bergamot oil from Calabrian citrus adds a fragrant, citrusy floral dimension that elevates the natural briskness of Ceylon beautifully.
+		    </p>
+		
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Bergamot Oil · Cornflower Petals · Citrus Peel</p>
+		    </div>
+		  </div>
+		</div>
+
+
+          <!-- Jasmine Green -->
+          <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+		  <div class="h-44 overflow-hidden bg-emerald-50">
+		    <img src="images/JasmineGreentea.jpeg" alt="Jasmine Green Tea" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Floral</span>
+		      <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Green Base</span>
+		    </div>
+		
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Jasmine Green</h3>
+		
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      Ceylon highland green tea is layered overnight with fresh jasmine blossoms, absorbing their heady fragrance naturally. The result is one of the most romantic teas in the world — light, floral, and hauntingly beautiful with every sip.
+		    </p>
+		
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Fresh Jasmine Blossoms · Highland Green Tea</p>
+		    </div>
+		  </div>
+		</div>
+
+
+          <!-- Lemon Ginger -->
+         <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+		  <div class="h-44 overflow-hidden bg-yellow-50">
+		    <img src="images/lemon-ginger-tea.jpg" alt="Lemon Ginger Tea" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Zesty</span>
+		      <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Black Base</span>
+		    </div>
+		
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Lemon Ginger</h3>
+		
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      Bright, invigorating, and immune-boosting. Sun-dried lemon peel and pieces of dried ginger root are blended into Ceylon black tea, creating a tangy, warming cup that is both energizing and soothing, perfect year round, hot or iced.
+		    </p>
+		
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Lemon Peel · Dried Ginger Root · Lemongrass</p>
+		    </div>
+		  </div>
+		</div>
+
+
+          <!-- Mint Green -->
+          <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+		  <div class="h-44 overflow-hidden bg-teal-50">
+		    <img src="images/PeppermintGreentea.webp" alt="Peppermint Green Tea" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Herbal</span>
+		      <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Green Base</span>
+		    </div>
+		
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Peppermint Green</h3>
+		
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      Dried peppermint leaves are combined with Ceylon's delicate highland green tea to create a cool, refreshing blend that is especially glorious served cold over ice in summer. Clean, crisp, and deeply refreshing, a natural digestive too.
+		    </p>
+		
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Peppermint Leaves · Spearmint · Ceylon Green Tea</p>
+		    </div>
+		  </div>
+		</div>
+
+
+          <!-- Rose & Hibiscus -->
+          <div class="bg-white rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+		  <div class="h-44 overflow-hidden bg-rose-50">
+		    <img src="images/RoseandHibiscustea.webp" alt="Rose and Hibiscus Tea" class="w-full h-full object-cover" />
+		  </div>
+		
+		  <div class="p-6">
+		    <div class="flex items-center gap-2 mb-3">
+		      <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Floral</span>
+		      <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">White Base</span>
+		    </div>
+		
+		    <h3 class="font-h3 text-h3 text-on-background mb-2">Rose and Hibiscus</h3>
+		
+		    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+		      A visually stunning and deeply aromatic blend. Dried rose petals and vibrant hibiscus flowers are woven into Ceylon white tea, creating a tea that turns a beautiful deep pink when steeped — floral, slightly tart, and naturally sweet.
+		    </p>
+		
+		    <div class="pt-4 border-t border-surface-container">
+		      <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Key Ingredients</p>
+		      <p class="font-body-sm text-body-sm text-primary font-semibold">Dried Rose Petals · Hibiscus · Ceylon White Tea</p>
+		    </div>
+		  </div>
+		</div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Flavor Profile ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-12">
+          <span class="font-label-caps text-label-caps text-secondary block mb-3">Sensory Profile</span>
+          <h2 class="font-h2 text-h2 text-on-background">Flavor, Aroma and Character</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-rose-600">palette</span>
+            </div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Taste</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Varies enormously by blend. Spiced teas are warming and bold; floral teas are gentle and sweet; citrus blends are bright and tangy; herbal blends are soothing and clean. The Ceylon base always provides a structured, reliable foundation.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-amber-600">air</span>
+            </div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Aroma</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Flavoured teas are often experienced first through smell. The aroma of a freshly opened tin of Masala Chai, or a steeping cup of Jasmine Green, fills a room instantly. This makes them among the most sensory-engaging of all tea categories.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-fuchsia-100 rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-fuchsia-600">colorize</span>
+            </div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Liquor Color</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">One of the most exciting aspects of flavoured teas like hibiscus blends turn deep crimson, turmeric blends glow golden, butterfly pea flower turns electric blue. The visual experience is part of the ritual and delight.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Brewing Guide ── -->
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
+          <div>
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">Brewing Guide</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-8">How to Brew Flavoured Tea</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Match Temperature to Base Tea</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Black-based blends: 90–95°C. Green-based blends: 75–80°C. White-based blends: 70–75°C. The added botanicals don't change the optimal temperature for the tea base — always follow the base tea's guidelines.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Use 1–1.5 Tsp per Cup</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Flavoured teas often contain bulky botanicals like flower petals and dried fruit. Use 1–1.5 teaspoons (2–3g) per 200ml to balance the tea and botanical character perfectly.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Steep for 3–5 Minutes</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Most botanicals release their flavour within the first 2–3 minutes. Steep for 3 minutes for a balanced cup. Spiced blends like Masala Chai can handle 5 minutes or even be simmered with milk for a traditional preparation.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+                <div>
+                  <h4 class="font-button text-button text-on-background mb-1">Experiment with Serving Style</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Spiced blends are wonderful with milk. Floral and fruit blends are exquisite served over ice. Citrus blends pair beautifully with honey. Part of the joy of flavoured tea is discovering your perfect serving ritual.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Health Benefits -->
+          <div class="bg-white rounded-2xl p-8 border border-surface-container shadow-sm">
+            <h3 class="font-h3 text-h3 text-on-background mb-6">Health Benefits</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <h4 class="font-button text-button text-on-background">Enhanced Antioxidant Power</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Many botanicals added to flavoured teas — hibiscus, rosehip, cinnamon, ginger — are themselves rich in antioxidants, compounding the health benefits of the Ceylon tea base.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <h4 class="font-button text-button text-on-background">Digestive Support</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Ginger, peppermint, cardamom, and fennel — common additions to spiced and herbal blends — are well-established digestive aids that reduce bloating, nausea, and indigestion.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <h4 class="font-button text-button text-on-background">Immune System Boost</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Lemon, ginger, hibiscus, and cinnamon are all rich in Vitamin C and immune-supporting compounds. A daily cup of lemon-ginger or hibiscus blend provides a meaningful contribution to daily immunity.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <h4 class="font-button text-button text-on-background">Mood and Relaxation</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Floral blends containing rose, lavender, and jasmine have proven mood-lifting and mildly calming effects. The ritual of brewing and sipping a beautiful tea is itself a powerful stress-reduction practice.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <h4 class="font-button text-button text-on-background">Anti-Inflammatory Botanicals</h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Turmeric, ginger, and cinnamon — popular additions to wellness blends — are among nature's most potent anti-inflammatory compounds, supporting joint health and overall wellbeing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Fun Fact Banner ── -->
+    <section class="bg-tertiary-fixed py-8">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center gap-6 text-on-tertiary-fixed">
+          <span class="material-symbols-outlined text-5xl text-primary flex-shrink-0">science</span>
+          <div>
+            <h3 class="font-h3 text-h3 text-on-background mb-1">Only Natural Ingredients</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">TeaLeaf uses exclusively natural botanical ingredients in all flavoured tea blends — no artificial flavourings, no synthetic aromas, no added colorants. Every ingredient can be seen with the naked eye in the loose leaf blend. What you smell is what grows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="bg-primary p-12 rounded-2xl relative overflow-hidden text-center text-on-primary">
+          <div class="absolute top-0 right-0 p-8 opacity-10">
+            <span class="material-symbols-outlined text-[160px]">eco</span>
+          </div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="font-h2 text-h2 mb-4">Explore More Tea Types</h2>
+            <p class="font-body-lg text-body-lg mb-8 text-primary-fixed/80">
+              Discover the full spectrum of Ceylon tea — from rare Silver Tips to bold black teas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="teatypes.html">
+                <button class="bg-white text-primary px-8 py-4 rounded-lg font-button text-button hover:bg-primary-fixed active:scale-95 transition-transform">
+                  All Tea Types
+                </button>
+              </a>
+              <a href="contact.html">
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-button text-button hover:bg-white/10 active:scale-95 transition-all">
+                  Plan a Visit
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+ <!-- Footer -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="index.html">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

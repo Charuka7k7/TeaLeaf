@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Oolong Tea - TeaLeaf.lk</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#a3f69c",
+	  "on-tertiary-container":"#f3f3da",
+	  "secondary-fixed":"#ffdbce",
+	  "primary-fixed-dim":"#88d982",
+	  "tertiary":"#555744",
+	  "on-primary-fixed-variant":"#005312",
+	  "on-tertiary-fixed":"#1b1d0e",
+	  "surface":"#fbf9f8",
+	  "outline":"#707a6c",
+	  "on-primary-container":"#cbffc2",
+	  "on-tertiary-fixed-variant":"#474836",
+	  "surface-container":"#f0eded",
+	  "on-tertiary":"#ffffff",
+	  "surface-container-highest":"#e4e2e1",
+	  "surface-container-lowest":"#ffffff",
+	  "background":"#fbf9f8",
+	  "inverse-on-surface":"#f2f0f0",
+	  "on-primary-fixed":"#002204",
+	  "secondary":"#75584d",
+	  "secondary-fixed-dim":"#e4beb2",
+	  "on-secondary":"#ffffff",
+	  "on-secondary-container":"#795c51",
+	  "error":"#ba1a1a",
+	  "on-surface-variant":"#40493d",
+	  "tertiary-container":"#6e6f5b",
+	  "on-error":"#ffffff",
+	  "surface-variant":"#e4e2e1",
+	  "tertiary-fixed":"#e4e4cc",
+	  "surface-bright":"#fbf9f8",
+	  "inverse-surface":"#303030",
+	  "secondary-container":"#fed7ca",
+	  "inverse-primary":"#88d982",
+	  "on-secondary-fixed-variant":"#5b4137",
+	  "tertiary-fixed-dim":"#c8c8b0",
+	  "on-background":"#1b1c1c",
+	  "on-error-container":"#93000a",
+	  "on-secondary-fixed":"#2b160f",
+	  "outline-variant":"#bfcaba",
+	  "surface-container-low":"#f5f3f3",
+	  "primary-container":"#2e7d32",
+	  "primary":"#0d631b",
+	  "surface-dim":"#dcd9d9",
+	  "surface-tint":"#1b6d24",
+	  "on-primary":"#ffffff",
+	  "surface-container-high":"#eae8e7",
+	  "on-surface":"#1b1c1c",
+	  "error-container":"#ffdad6"},
+	  spacing:{"xs":"4px","sm":"12px","base":"8px","md":"24px","gutter":"24px","lg":"40px","xl":"64px"},
+	  fontFamily:{"h1":["Plus Jakarta Sans"],
+		  "h2":["Plus Jakarta Sans"],
+		  "h3":["Plus Jakarta Sans"],
+		  "body-lg":["Plus Jakarta Sans"],
+		  "body-md":["Plus Jakarta Sans"],
+		  "body-sm":["Plus Jakarta Sans"],
+		  "button":["Plus Jakarta Sans"],
+		  "label-caps":["Plus Jakarta Sans"]},
+		fontSize:{"h1":["40px",{lineHeight:"1.2",letterSpacing:"-0.02em",fontWeight:"700"}],
+			"h2":["32px",{lineHeight:"1.3",letterSpacing:"-0.01em",fontWeight:"600"}],
+			"h3":["24px",{lineHeight:"1.4",letterSpacing:"0",fontWeight:"600"}],
+			"body-lg":["18px",{lineHeight:"1.6",letterSpacing:"0",fontWeight:"400"}],
+			"body-md":["16px",{lineHeight:"1.5",letterSpacing:"0",fontWeight:"400"}],
+			"body-sm":["14px",{lineHeight:"1.5",letterSpacing:"0",fontWeight:"400"}],
+			"button":["14px",{lineHeight:"1.0",letterSpacing:"0.02em",fontWeight:"600"}],
+			"label-caps":["12px",{lineHeight:"1.0",letterSpacing:"0.05em",fontWeight:"700"}]}}}}
+  </script>
+  <style>body{font-family:'Plus Jakarta Sans',sans-serif;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}.hero-gradient{background:linear-gradient(to bottom,rgba(0,0,0,0.60),rgba(0,0,0,0.30) 50%,rgba(251,249,248,1) 100%);}</style>
+</head>
+<body class="bg-background text-on-background">
+  <nav class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+    <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+      <a href="index.html">
+        <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-bold text-[#2E7D32] border-b-2 border-[#2E7D32] pb-1" href="teatypes.html">Tea Types</a>
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors" href="cultivation.html">Cultivation</a>
+        <a class="text-sm font-medium text-stone-600 hover:text-[#2E7D32] transition-colors" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html"><button class="bg-[#2e7d32] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#0d631b] transition-colors active:scale-95">Plan Visit</button></a>
+    </div>
+  </nav>
+  <main class="pt-20">
+    <section class="relative h-[500px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Oolong Tea" class="w-full h-full object-cover" src="images/oolongteacup.jpg"/>
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 text-center px-6">
+        <a href="teatypes.html" class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white mb-4 transition-colors"><span class="material-symbols-outlined text-sm">arrow_back</span> All Tea Types</a>
+        <div class="mt-2"><span class="text-xs font-bold uppercase tracking-widest text-[#0d631b] bg-[#a3f69c]/30 inline-block px-3 py-1 rounded-full mb-4">Partially Oxidized</span></div>
+        <h1 class="font-h1 text-h1 text-white mb-3">Oolong Tea</h1>
+        <p class="text-lg text-white/90 max-w-xl mx-auto">The connoisseur's choice — a tea of extraordinary complexity that bridges the freshness of green and the depth of black in a single extraordinary cup.</p>
+      </div>
+    </section>
+    <section class="bg-primary py-8">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-on-primary">
+          <div><p class="text-3xl font-bold">15–85%</p><p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Oxidized</p></div>
+          <div><p class="text-3xl font-bold">3–5 min</p><p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Brew Time</p></div>
+          <div><p class="text-3xl font-bold">80–90°C</p><p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Water Temp</p></div>
+          <div><p class="text-3xl font-bold">30–50mg</p><p class="text-xs font-bold uppercase tracking-widest text-primary-fixed/80 mt-1">Caffeine / Cup</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <div>
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">Overview</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-6">The Best of Both Worlds</h2>
+            <div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
+              <p>Oolong tea occupies a fascinating middle ground, partially oxidized anywhere from 15% to 85%, meaning no two oolongs are quite alike. Lightly oxidized oolongs are vibrant and floral, closer in character to green tea. Heavily oxidized oolongs are rich, roasted, and complex, approaching black tea territory.</p>
+              <p>Ceylon oolong, produced primarily in the Nuwara Eliya and Dimbula high-grown regions, is a relatively newer addition to Sri Lanka's tea portfolio but has quickly earned recognition among tea connoisseurs worldwide. The cool mountain climate and thin highland air impart a unique brightness and floral complexity that distinguishes it from Chinese or Taiwanese oolongs.</p>
+              <p>The production process is a skilled art: leaves are withered, bruised at the edges to initiate partial oxidation, then carefully monitored and heat-fixed at precisely the right moment to lock in the desired flavor profile.</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-6 -right-6 w-48 h-48 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+            <img alt="Oolong Tea cup" class="relative z-10 rounded-2xl shadow-xl w-full aspect-[4/3] object-cover" src="images/oolongtea.webp"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-12"><span class="font-label-caps text-label-caps text-secondary block mb-3">Sensory Profile</span><h2 class="font-h2 text-h2 text-on-background">Flavor, Aroma and Character</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-orange-600">local_florist</span></div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Taste</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Complex and multi-layered. Light oolongs carry floral, fruity notes like orchid, peach, and lychee. Darker oolongs develop roasted, woody, and sometimes chocolatey notes. The finish is long, smooth, and transformative, revealing new flavors as it cools.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-purple-600">air</span></div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Aroma</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">One of the most aromatic of all teas. The scent changes as the cup cools, starting with bright floral and fruity notes, then deepening into warm, toasty undertones. Ceylon oolongs carry a distinctive mountain freshness throughout.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4"><span class="material-symbols-outlined text-amber-600">colorize</span></div>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Liquor Color</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Ranges from pale golden-green (lightly oxidized) to a warm amber-orange (heavily oxidized). The color is a reliable guide to the oxidation level and character of the tea, light and translucent to rich and glowing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
+          <div>
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">Brewing Guide</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-8">How to Brew Oolong Tea</h2>
+            <div class="space-y-6">
+              <div class="flex gap-4"><div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">1</div><div><h4 class="font-button text-button text-on-background mb-1">Rinse the Leaves First</h4><p class="font-body-sm text-body-sm text-on-surface-variant">For tightly rolled oolongs, pour a small amount of hot water over the leaves, swirl briefly, then discard. This "awakens" the leaves and opens them up for a better infusion.</p></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">2</div><div><h4 class="font-button text-button text-on-background mb-1">Water at 80–90°C</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Lighter oolongs need cooler water (80°C); darker, more oxidized oolongs can handle hotter water (90°C). Matching temperature to oxidation level is the key to unlocking flavor.</p></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">3</div><div><h4 class="font-button text-button text-on-background mb-1">Multiple Short Steeps</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Oolong excels with multiple short infusions. First steep: 2–3 minutes. Each subsequent steep: add 30 seconds. Quality oolong can yield 4–6 wonderful infusions, each subtly different.</p></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">4</div><div><h4 class="font-button text-button text-on-background mb-1">Enjoy Straight</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Oolong is best enjoyed without milk or sugar to fully appreciate its nuanced complexity. Try different infusions side by side to explore how the character evolves.</p></div></div>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl p-8 border border-surface-container">
+            <h3 class="font-h3 text-h3 text-on-background mb-6">Health Benefits</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5">check_circle</span><div><h4 class="font-button text-button text-on-background">Weight Management</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Oolong activates enzymes that help break down triglycerides (fat) stored in fat cells, making it particularly effective for weight management when combined with a healthy lifestyle.</p></div></div>
+              <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5">check_circle</span><div><h4 class="font-button text-button text-on-background">Blood Sugar Control</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Studies show oolong polyphenols can help regulate blood sugar levels and improve insulin sensitivity, making it a beneficial choice for those managing diabetes.</p></div></div>
+              <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5">check_circle</span><div><h4 class="font-button text-button text-on-background">Bone Density</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Regular oolong consumption has been associated with improved bone mineral density, potentially reducing the risk of osteoporosis in later life.</p></div></div>
+              <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5">check_circle</span><div><h4 class="font-button text-button text-on-background">Stress Reduction</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">The L-theanine in oolong promotes alpha brain wave activity, leading to a state of relaxed alertness that reduces anxiety and improves focus simultaneously.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="bg-primary p-12 rounded-2xl relative overflow-hidden text-center text-on-primary">
+          <div class="absolute top-0 right-0 p-8 opacity-10"><span class="material-symbols-outlined text-[160px]">eco</span></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="font-h2 text-h2 mb-4">Explore More Tea Types</h2>
+            <p class="font-body-lg text-body-lg mb-8 text-primary-fixed/80">Discover all six types of exceptional Ceylon tea grown in Sri Lanka's highland estates.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="teatypes.html"><button class="bg-white text-primary px-8 py-4 rounded-lg font-button text-button hover:bg-primary-fixed active:scale-95 transition-transform">All Tea Types</button></a>
+              <a href="contact.html"><button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-button text-button hover:bg-white/10 active:scale-95 transition-all">Plan a Visit</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="index.html">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
