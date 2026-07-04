@@ -1,420 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Home-TeaLeaf.lk</title>
+<style>
+.slideshow-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+.slide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+.slide.active{
+  opacity: 1;
+}
 
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary-fixed": "#a3f69c",
-            "on-tertiary-container": "#f3f3da",
-            "secondary-fixed": "#ffdbce",
-            "primary-fixed-dim": "#88d982",
-            "tertiary": "#555744",
-            "on-primary-fixed-variant": "#005312",
-            "on-tertiary-fixed": "#1b1d0e",
-            "surface": "#fbf9f8",
-            "outline": "#707a6c",
-            "on-primary-container": "#cbffc2",
-            "on-tertiary-fixed-variant": "#474836",
-            "surface-container": "#f0eded",
-            "on-tertiary": "#ffffff",
-            "surface-container-highest": "#e4e2e1",
-            "surface-container-lowest": "#ffffff",
-            "background": "#fbf9f8",
-            "inverse-on-surface": "#f2f0f0",
-            "on-primary-fixed": "#002204",
-            "secondary": "#75584d",
-            "secondary-fixed-dim": "#e4beb2",
-            "on-secondary": "#ffffff",
-            "on-secondary-container": "#795c51",
-            "error": "#ba1a1a",
-            "on-surface-variant": "#40493d",
-            "tertiary-container": "#6e6f5b",
-            "on-error": "#ffffff",
-            "surface-variant": "#e4e2e1",
-            "tertiary-fixed": "#e4e4cc",
-            "surface-bright": "#fbf9f8",
-            "inverse-surface": "#303030",
-            "secondary-container": "#fed7ca",
-            "inverse-primary": "#88d982",
-            "on-secondary-fixed-variant": "#5b4137",
-            "tertiary-fixed-dim": "#c8c8b0",
-            "on-background": "#1b1c1c",
-            "on-error-container": "#93000a",
-            "on-secondary-fixed": "#2b160f",
-            "outline-variant": "#bfcaba",
-            "surface-container-low": "#f5f3f3",
-            "primary-container": "#2e7d32",
-            "primary": "#0d631b",
-            "surface-dim": "#dcd9d9",
-            "surface-tint": "#1b6d24",
-            "on-primary": "#ffffff",
-            "surface-container-high": "#eae8e7",
-            "on-surface": "#1b1c1c",
-            "error-container": "#ffdad6"
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          spacing: {
-            "base": "8px",
-            "container-max": "1280px",
-            "md": "24px",
-            "xs": "4px",
-            "sm": "12px",
-            "gutter": "24px",
-            "xl": "64px",
-            "lg": "40px"
-          },
-          fontFamily: {
-            "h1": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "button": ["Plus Jakarta Sans"],
-            "label-caps": ["Plus Jakarta Sans"],
-            "h2": ["Plus Jakarta Sans"],
-            "h3": ["Plus Jakarta Sans"],
-            "body-lg": ["Plus Jakarta Sans"]
-          },
-          fontSize: {
-            "h1":         ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
-            "body-md":    ["16px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
-            "body-sm":    ["14px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
-            "button":     ["14px", { lineHeight: "1.0", letterSpacing: "0.02em",  fontWeight: "600" }],
-            "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.05em",  fontWeight: "700" }],
-            "h2":         ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
-            "h3":         ["24px", { lineHeight: "1.4", letterSpacing: "0",       fontWeight: "600" }],
-            "body-lg":    ["18px", { lineHeight: "1.6", letterSpacing: "0",       fontWeight: "400" }]
-          }
-        }
-      }
-    }
-  </script>
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+}
 
-  <link rel="stylesheet" href="styles.css"/>
-</head>
+.left{
+  left: 20px;
+}
 
-<body class="bg-background text-on-background font-body-md">
+.right{
+  right: 20px;
+}
 
-  <nav class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] dark:bg-stone-950 shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
-    <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+.slide-dots{
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
 
-      <div class="flex items-center">
-        <a href="#">
-          <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
-        </a>
-      </div>
+.dot{
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
 
-      <div class="hidden md:flex items-center gap-8">
-        <a class="font-['Plus_Jakarta_Sans'] text-sm pb-1 text-[#2E7D32] dark:text-green-400 font-bold border-b-2 border-[#2E7D32]" href="#">Home</a>
-        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="teatypes.html">Tea Types</a>
-        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="cultivation.html">Cultivation</a>
-        <a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] transition-colors duration-200" href="contact.html">Contact</a>
-      </div>
+.dot.active{
+  background: white;
+}
 
-      <a href="contact.html">
-        <button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-primary transition-colors active:scale-95 transition-transform">
-          Plan Visit
-        </button>
-      </a>
-
-    </div>
-  </nav>
-
-  <main class="pt-20">
-
-    <section class="relative h-[870px] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-
-        <div class="slideshow-container">
-          <div class="slide active">
-            <img alt="Tea image 1" class="w-full h-full object-cover" src="images/slide-1.jpg"/>
-          </div>
-          <div class="slide">
-            <img alt="Tea image 2" class="w-full h-full object-cover" src="images/slide-2.jpg"/>
-          </div>
-          <div class="slide">
-            <img alt="Tea image 3" class="w-full h-full object-cover" src="images/slide-3.jpg"/>
-          </div>
-          <div class="slide">
-            <img alt="Tea image 4" class="w-full h-full object-cover" src="images/slide-4.jpg"/>
-          </div>
-          <div class="slide">
-            <img alt="Tea image 5" class="w-full h-full object-cover" src="images/slide-5.jpg"/>
-          </div>
-        </div>
-
-        <button class="slide-arrow left" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="slide-arrow right" onclick="changeSlide(1)">&#10095;</button>
-
-        <div class="slide-dots">
-          <span class="dot active" onclick="goToSlide(0)"></span>
-          <span class="dot" onclick="goToSlide(1)"></span>
-          <span class="dot" onclick="goToSlide(2)"></span>
-          <span class="dot" onclick="goToSlide(3)"></span>
-          <span class="dot" onclick="goToSlide(4)"></span>
-        </div>
-
-        <div class="absolute inset-0 hero-gradient"></div>
-      </div>
-
-      <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 text-center">
-        <span class="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-widest bg-primary-fixed/30 inline-block px-3 py-1 rounded-full">
-          The Island of Tea
-        </span>
-        <h1 class="font-h1 text-h1 text-white mb-6 max-w-4xl mx-auto">
-          Welcome to Sri Lankan Tea Heritage
-        </h1>
-        <p class="font-body-lg text-body-lg text-white max-w-2xl mx-auto mb-10">
-          Discover the legacy of Ceylon Tea, where tradition meets the misty peaks of the central highlands to produce the world's finest aromatic blends.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="teatypes.html">
-            <button class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-button text-button hover:bg-primary shadow-lg active:scale-95 transition-transform">
-              Explore Tea Types
-            </button>
-          </a>
-          <button class="bg-white/90 text-primary border border-primary/20 px-8 py-4 rounded-lg font-button text-button hover:bg-white active:scale-95 transition-transform">
-            Our History
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-xl bg-white">
-      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-
-          <div class="relative">
-            <div class="absolute -top-8 -left-8 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl"></div>
-            <img
-              alt="Ceylon Tea"
-              class="relative z-10 rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
-              src="images/tea.webp"
-            />
-          </div>
-
-          <div>
-            <h2 class="font-h2 text-h2 text-on-background mb-6">A Legacy Steeping for Over 150 Years</h2>
-            <div class="space-y-4">
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Since James Taylor first planted tea in the Loolecondera estate in 1867, Sri Lanka has become synonymous with the highest quality tea in the world. The unique geography of the island from coastal plains to the high altitude mountains creates a micro-climate perfect for distinct flavor profiles.
-              </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Today, Ceylon Tea is more than just a beverage; it is a vital pillar of the Sri Lankan economy and a global symbol of purity and excellence. Every leaf is hand-picked with precision, ensuring that only the finest "two leaves and a bud" make it into your cup.
-              </p>
-              <div class="grid grid-cols-3 gap-6 pt-8">
-                <div>
-                  <p class="text-primary font-bold text-h3">1867</p>
-                  <p class="font-label-caps text-label-caps text-on-surface-variant">FIRST ESTATE</p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-h3">4th</p>
-                  <p class="font-label-caps text-label-caps text-on-surface-variant">GLOBAL EXPORTER</p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-h3">100%</p>
-                  <p class="font-label-caps text-label-caps text-on-surface-variant">HAND-PICKED</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="py-xl bg-surface-container-low">
-      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
-        <div class="mb-12">
-          <div class="max-w-xl">
-            <h2 class="font-h2 text-h2 text-on-background mb-4">The Tea Regions of Ceylon</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              The character of our tea is defined by the elevation where it grows. Discover the seven distinct regions that define our world-renowned heritage.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Nuwara Eliya" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/NUWARAELIYATEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">High Grown</span>
-              <h3 class="font-h3 text-white mb-1">Nuwara Eliya</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">The "Champagne" of teas; light, delicate, and floral from the highest peaks.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Dimbula" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/DIMBULATEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">High Grown</span>
-              <h3 class="font-h3 text-white mb-1">Dimbula</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">Crisp and clean with a golden-orange hue and refreshing citrus notes.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Uva" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/UVATEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">High Grown</span>
-              <h3 class="font-h3 text-white mb-1">Uva</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">Renowned for its exotic, aromatic character and unique mellow flavor.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Uda Pussellawa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/UDAPUSSELLAWATEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">High Grown</span>
-              <h3 class="font-h3 text-white mb-1">Uda Pussellawa</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">A dark and strong brew with subtle rosy highlights and bold character.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Kandy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/KANDYTEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">Mid Grown</span>
-              <h3 class="font-h3 text-white mb-1">Kandy</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">Full bodied and robust, producing a rich, copper toned infusion.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px]">
-            <img alt="Ruhuna" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/RUHUNAYEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-              <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">Low Grown</span>
-              <h3 class="font-h3 text-white mb-1">Ruhuna</h3>
-              <p class="text-stone-300 text-body-sm leading-relaxed">Grown in fertile coastal soil, offering deep color and intense strength.</p>
-            </div>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden group h-[400px] sm:col-span-2">
-            <img alt="Sabaragamuwa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/SABARAGAMUWATEARegion.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
-              <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block w-fit mb-2">Low Grown</span>
-              <h3 class="font-h2 text-white mb-2">Sabaragamuwa</h3>
-              <p class="text-stone-300 text-body-md max-w-lg leading-relaxed">Sri Lanka's biggest region, known for its stylish long leaf teas and exceptionally dark, rich infusions.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="py-xl">
-      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
-        <div class="bg-primary p-12 rounded-2xl relative overflow-hidden text-center text-on-primary">
-          <div class="absolute top-0 right-0 p-8 opacity-10">
-            <span class="material-symbols-outlined text-[160px]">eco</span>
-          </div>
-          <div class="relative z-10 max-w-2xl mx-auto">
-            <h2 class="font-h2 text-h2 mb-6">Experience the Heritage Firsthand</h2>
-            <p class="font-body-lg text-body-lg mb-10 text-primary-fixed/80">
-              Book a guided tour through our historic estates and witness the journey of tea from the garden to your tea cup.
-            </p>
-            <a href="contact.html">
-              <button class="bg-white text-primary px-10 py-4 rounded-lg font-button text-button hover:bg-primary-fixed active:scale-95 transition-transform">
-                Plan Your Estate Visit
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
-
-      <div>
-        <div class="mb-4">
-          <a href="#">
-            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
-          </a>
-        </div>
-        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
-          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
-        </p>
-        <div class="flex gap-4">
-          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
-          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
-          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div class="flex flex-col gap-3">
-          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
-          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
-          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
-        </div>
-        <div class="flex flex-col gap-3">
-          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
-          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
-          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
-      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
-        © 2026 TEALEAF - Leafora Tea Co. All rights reserved
-      </p>
-    </div>
-  </footer>
-
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots   = document.querySelectorAll('.dot');
-    let autoTimer;
-
-    function showSlide(n) {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      currentSlide = (n + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    function changeSlide(dir) {
-      clearInterval(autoTimer);
-      showSlide(currentSlide + dir);
-      startAuto();
-    }
-
-    function goToSlide(n) {
-      clearInterval(autoTimer);
-      showSlide(n);
-      startAuto();
-    }
-
-    function startAuto() {
-      autoTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
-    }
-
-    // Start automatically on page load
-    startAuto();
-  </script>
-</body>
-</html>
+.hero-gradient{
+  background: rgba(0,0,0,0.35);
+}
+</style>
