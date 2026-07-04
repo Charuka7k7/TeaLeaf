@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cultivation - TeaLeaf.lk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#a3f69c",
+                    "on-tertiary-container": "#f3f3da",
+                    "secondary-fixed": "#ffdbce",
+                    "primary-fixed-dim": "#88d982",
+                    "tertiary": "#555744",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "surface": "#fbf9f8",
+                    "outline": "#707a6c",
+                    "on-primary-container": "#cbffc2",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "surface-container": "#f0eded",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fbf9f8",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-primary-fixed": "#002204",
+                    "secondary": "#75584d",
+                    "secondary-fixed-dim": "#e4beb2",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#795c51",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#40493d",
+                    "tertiary-container": "#6e6f5b",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "tertiary-fixed": "#e4e4cc",
+                    "surface-bright": "#fbf9f8",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#fed7ca",
+                    "inverse-primary": "#88d982",
+                    "on-secondary-fixed-variant": "#5b4137",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "on-background": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#2b160f",
+                    "outline-variant": "#bfcaba",
+                    "surface-container-low": "#f5f3f3",
+                    "primary-container": "#2e7d32",
+                    "primary": "#0d631b",
+                    "surface-dim": "#dcd9d9",
+                    "surface-tint": "#1b6d24",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "on-surface": "#1b1c1c",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "button": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] dark:bg-stone-950 shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+<nav class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+<div class="text-2xl font-bold text-[#2E7D32] dark:text-green-500 tracking-tighter" style=""><a href="index.html">
+          <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+        </a></div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200" style="" href="index.html">Home</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200" style="" href="teatypes.html">Tea Types</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-[#2E7D32] dark:text-green-400 border-b-2 border-[#2E7D32] pb-1" href="#" style="">Cultivation</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200"  style="" href="contact.html">Contact</a>
+</div>
+<a href="contact.html">
+        <button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-primary transition-colors active:scale-95 transition-transform">
+          Plan Visit
+        </button>
+      </a>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden">
+<img alt="Sri Lankan Tea Plantation" class="absolute inset-0 w-full h-full object-cover" data-alt="expansive emerald green tea plantation in the misty highlands of Sri Lanka at sunrise with soft golden light filtering through the clouds" src="images/misty-teafield.webp" style="">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+<div class="relative max-w-[1280px] mx-auto px-6 md:px-12 w-full text-white">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-fixed mb-4 block" style="">The Art of Growing</span>
+<h1 class="font-h1 text-h1 max-w-2xl" style="">Excellence Born from the Highland Soil</h1>
+<p class="font-body-lg text-body-lg mt-4 max-w-xl text-stone-200" style="">Discover the meticulous journey of Ceylon tea, from the misty climate of Badulla to your morning cup.</p>
+</div>
+</section>
+<!-- Climate & Soil Bento Grid -->
+<section class="max-w-[1280px] mx-auto px-6 md:px-12 py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Climate Requirements -->
+<div class="md:col-span-7 bg-white p-lg rounded-xl shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)] border border-surface-container flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="thermostat" style="">thermostat</span>
+<h2 class="font-h2 text-h2 text-primary" style="">Climate Requirements</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8" style="">Tea thrives in a tropical and subtropical climate. In Sri Lanka, the specific combination of altitude and humidity creates the unique character of our high grown teas.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-caps text-label-caps text-secondary block mb-1" style="">TEMPERATURE</span>
+<span class="font-h3 text-h3" style="">18°C – 30°C</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-caps text-label-caps text-secondary block mb-1" style="">ANNUAL RAINFALL</span>
+<span class="font-h3 text-h3" style="">125 – 250 cm</span>
+</div>
+</div>
+</div>
+<div class="mt-8 overflow-hidden rounded-lg h-48">
+<img class="w-full h-full object-cover" data-alt="Close up of fresh tea leaves with water droplets on them in a misty plantation environment with soft diffused lighting" src="images/climate.webp" style="">
+</div>
+</div>
+<!-- Soil Conditions -->
+<div class="md:col-span-5 bg-tertiary-fixed p-lg rounded-xl flex flex-col">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-4xl mb-6" data-icon="landslide" style="">landslide</span>
+<h2 class="font-h2 text-h2 text-on-tertiary-fixed mb-4" style="">Soil Conditions</h2>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mb-6" style="">The foundation of quality tea lies in the earth. Sri Lankan tea estates favor acidic soils rich in iron and phosphorus.</p>
+<ul class="space-y-4 flex-grow">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle" style="">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed-variant" style="">Optimal pH levels between 4.5 and 5.5 for high nutrient absorption.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle" style="">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed-variant" style="">Excellent drainage systems to prevent waterlogging on steep slopes.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle" style="">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed-variant" style="">Deep, loamy soils that allow root systems to penetrate deep into the mountainside.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Planting Methods Timeline -->
+<section class="bg-surface-container py-xl">
+<div class="max-w-[1280px] mx-auto px-6 md:px-12">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-on-background" style="">The Planting Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-2" style="">A multi-year commitment to quality, starting from the nursery to the sprawling estate hills.</p>
+</div>
+<div class="relative">
+<!-- Vertical Line (Desktop Only) -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant transform -translate-x-1/2"></div>
+<div class="space-y-16">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 md:text-right">
+<h3 class="font-h3 text-h3 text-primary mb-2" style="">Nursery Propagation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">Carefully selected cuttings are nurtured in specialized nurseries for 9-12 months until they reach optimal planting height.</p>
+</div>
+<div class="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold" style="">1</div>
+<div class="md:w-1/2">
+<img class="rounded-xl w-full h-48 object-cover shadow-md" data-alt="small tea saplings in neat rows within a professional greenhouse nursery, soft morning sunlight hitting the vibrant green leaves" src="images/tea-nersury.jpg"style="">
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-gutter">
+<div class="md:w-1/2 md:text-left">
+<h3 class="font-h3 text-h3 text-primary mb-2" style="">Terrace Planting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">Saplings are transplanted to the mountainside in contoured terraces to prevent erosion and maximize water efficiency.</p>
+</div>
+<div class="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold" style="">2</div>
+<div class="md:w-1/2">
+<img class="rounded-xl w-full h-48 object-cover shadow-md" data-alt="geometric patterns of tea terraces on a steep hillside in Sri Lanka, symmetrical lines and deep green colors" src="images/Terrace-Planting.jpg" style="">
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 md:text-right">
+<h3 class="font-h3 text-h3 text-primary mb-2" style="">Pruning &amp; Training</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">Bush height is maintained through regular pruning to create a 'plucking table', ensuring consistent growth of tender shoots.</p>
+</div>
+<div class="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold" style="">3</div>
+<div class="md:w-1/2">
+<img class="rounded-xl w-full h-48 object-cover shadow-md" data-alt="pruned tea bushes forming a flat surface top under a clear blue sky, showing industrial precision in agriculture" src="images/pruning.webp" style="">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Harvesting Process -->
+<section class="max-w-[1280px] mx-auto px-6 md:px-12 py-xl">
+<div class="bg-white rounded-xl shadow-lg border border-surface-container overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="p-lg">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block" style="">THE FINAL TOUCH</span>
+<h2 class="font-h2 text-h2 text-on-background mb-6" style="">Art of Harvesting</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="front_hand" style="">front_hand</span>
+</div>
+<div>
+<h4 class="font-button text-button text-on-background mb-1" style="">Two Leaves and a Bud</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" style="">We only harvest the top two tender leaves and the unopened bud, where the concentration of flavor and antioxidants is highest.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="schedule" style="">schedule</span>
+</div>
+<div>
+<h4 class="font-button text-button text-on-background mb-1" style="">7-Day Plucking Cycles</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" style="">Fields are visited every 7 to 10 days to ensure that only the freshest growth is picked, maintaining the estate's quality standards.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing" style="">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="font-button text-button text-on-background mb-1" style="">Immediate Processing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" style="">Harvested leaves are transported to the estate factory within hours to begin the drying and fermentation process.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="harvesting tea leaves" src="images/slide-4.jpg" style="">
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-[1280px] mx-auto px-6 md:px-12 pb-xl">
+<div class="bg-primary text-on-primary rounded-xl p-lg text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="eco" style="">eco</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-h2 text-h2 mb-4" style="">See the Process Firsthand</h2>
+<p class="font-body-lg text-body-lg mb-8 max-w-xl mx-auto opacity-90" style="">Book a guided tour through our vintage estates and experience the heritage of Sri Lankan tea cultivation.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="contact.html"><button class="bg-white text-primary px-8 py-4 rounded-lg font-button text-button hover:bg-stone-100 transition-colors" style="" >Book a Factory Tour</button></a>
+<button class="bg-primary-container border border-on-primary text-on-primary px-8 py-4 rounded-lg font-button text-button hover:bg-on-primary-fixed-variant transition-colors" style="">Download Estate Map</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+ <!-- ── Footer ── -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="index.html">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved
+      </p>
+    </div>
+  </footer>
+
+</body></html>
