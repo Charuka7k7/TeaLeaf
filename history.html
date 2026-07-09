@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>History of Ceylon Tea - TeaLeaf | The Knowledge Hub</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#a3f69c", "on-tertiary-container": "#f3f3da",
+            "secondary-fixed": "#ffdbce", "primary-fixed-dim": "#88d982",
+            "tertiary": "#555744", "on-primary-fixed-variant": "#005312",
+            "on-tertiary-fixed": "#1b1d0e", "surface": "#fbf9f8",
+            "outline": "#707a6c", "on-primary-container": "#cbffc2",
+            "on-tertiary-fixed-variant": "#474836", "surface-container": "#f0eded",
+            "on-tertiary": "#ffffff", "surface-container-highest": "#e4e2e1",
+            "surface-container-lowest": "#ffffff", "background": "#fbf9f8",
+            "inverse-on-surface": "#f2f0f0", "on-primary-fixed": "#002204",
+            "secondary": "#75584d", "secondary-fixed-dim": "#e4beb2",
+            "on-secondary": "#ffffff", "on-secondary-container": "#795c51",
+            "error": "#ba1a1a", "on-surface-variant": "#40493d",
+            "tertiary-container": "#6e6f5b", "on-error": "#ffffff",
+            "surface-variant": "#e4e2e1", "tertiary-fixed": "#e4e4cc",
+            "surface-bright": "#fbf9f8", "inverse-surface": "#303030",
+            "secondary-container": "#fed7ca", "inverse-primary": "#88d982",
+            "on-secondary-fixed-variant": "#5b4137", "tertiary-fixed-dim": "#c8c8b0",
+            "on-background": "#1b1c1c", "on-error-container": "#93000a",
+            "on-secondary-fixed": "#2b160f", "outline-variant": "#bfcaba",
+            "surface-container-low": "#f5f3f3", "primary-container": "#2e7d32",
+            "primary": "#0d631b", "surface-dim": "#dcd9d9",
+            "surface-tint": "#1b6d24", "on-primary": "#ffffff",
+            "surface-container-high": "#eae8e7", "on-surface": "#1b1c1c",
+            "error-container": "#ffdad6"
+          },
+          spacing: {
+            "xs": "4px", "sm": "12px", "base": "8px", "md": "24px",
+            "gutter": "24px", "lg": "40px", "xl": "64px"
+          },
+          fontFamily: {
+            "h1": ["Plus Jakarta Sans"], "h2": ["Plus Jakarta Sans"],
+            "h3": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"],
+            "button": ["Plus Jakarta Sans"], "label-caps": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "h1":        ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "h2":        ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "h3":        ["24px", { lineHeight: "1.4", letterSpacing: "0",       fontWeight: "600" }],
+            "body-lg":   ["18px", { lineHeight: "1.6", letterSpacing: "0",       fontWeight: "400" }],
+            "body-md":   ["16px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
+            "body-sm":   ["14px", { lineHeight: "1.5", letterSpacing: "0",       fontWeight: "400" }],
+            "button":    ["14px", { lineHeight: "1.0", letterSpacing: "0.02em",  fontWeight: "600" }],
+            "label-caps":["12px", { lineHeight: "1.0", letterSpacing: "0.05em",  fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .hero-gradient { background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35) 50%, rgba(251,249,248,1) 100%); }
+
+    /* Timeline vertical line */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #a3f69c, #2e7d32, #0d631b);
+      transform: translateX(-50%);
+    }
+    /* Timeline dot */
+    .timeline-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #0d631b;
+      border: 3px solid #a3f69c;
+      flex-shrink: 0;
+    }
+
+    /* Fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Quote pull style */
+    .pull-quote {
+      border-left: 4px solid #a3f69c;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background">
+
+  <!-- ── Navigation ── -->
+  <header class="fixed top-0 w-full z-50 border-b border-stone-200 bg-[#FDFBF7] dark:bg-stone-950 shadow-[0_4px_20px_-4px_rgba(46,125,50,0.08)]">
+<nav class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1280px] mx-auto">
+<div class="text-2xl font-bold text-[#2E7D32] dark:text-green-500 tracking-tighter" style=""><a href="index.html">
+          <img src="images/logo.png" alt="TeaLeaf Logo" class="h-12 w-auto object-contain"/>
+        </a></div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200" style="" href="index.html">Home</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200" style="" href="teatypes.html">Tea Types</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-[#2E7D32] dark:text-green-400 border-b-2 border-[#2E7D32] pb-1" href="#" style="">Cultivation</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200" style="" href="index.html">Tea Processing</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#2E7D32] hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-200"  style="" href="contact.html">Contact</a>
+</div>
+<a href="contact.html">
+        <button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-primary transition-colors active:scale-95 transition-transform">
+          Plan Visit
+        </button>
+      </a>
+</nav>
+</header>
+<main class="mt-20">
+
+    <!-- ── Hero ── -->
+    <section class="relative h-[560px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Historic Ceylon Tea Plantation" class="w-full h-full object-cover" src="images/hero1.jpg"/>
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <span class="font-label-caps text-label-caps text-[#0d631b] bg-[#a3f69c]/30 inline-block px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+          Est. 1867
+        </span>
+        <h1 class="font-h1 text-h1 text-white mb-5" style="font-size:52px;">
+          The History of Ceylon Tea
+        </h1>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+          From a colonial accident to a global icon — the extraordinary 150-year journey of the world's most celebrated tea, born in the misty highlands of Sri Lanka.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Key Stats Bar ── -->
+    <section class="bg-[#0d631b] py-8">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+          <div>
+            <p class="text-3xl font-bold font-h1">1867</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]/80 mt-1">First Estate Planted</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold font-h1">150+</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]/80 mt-1">Years of Heritage</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold font-h1">4th</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]/80 mt-1">Largest Tea Exporter</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold font-h1">300K+</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]/80 mt-1">Tonnes Exported / Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Origins Section ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <div class="fade-in">
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">The Beginning</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-6">Before Tea: The Coffee Era</h2>
+            <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+              <p>
+                Long before Sri Lanka became synonymous with tea, the island was a thriving coffee producer. Under British colonial rule in the early 19th century, the central highlands were blanketed with coffee plantations — a profitable enterprise that supported the colonial economy for decades.
+              </p>
+              <p>
+                The island's coffee industry reached its peak in the 1860s, employing tens of thousands of Tamil labourers brought from South India and generating enormous wealth for British planters. The central highland towns of Kandy, Nuwara Eliya, and Badulla were built around the coffee trade.
+              </p>
+              <p>
+                But in 1869, disaster struck. A catastrophic fungal disease — <em>Hemileia vastatrix</em>, known as coffee leaf rust — swept through the plantations with devastating speed. Within fifteen years, virtually every coffee plant on the island had been destroyed. The planters were ruined, the labourers unemployed, and the highland economy in freefall.
+              </p>
+            </div>
+            <div class="mt-6 pull-quote">
+              <p class="font-body-lg text-body-lg text-on-surface-variant italic">
+                "The coffee blight was a catastrophe — but it opened the door to something far greater."
+              </p>
+            </div>
+          </div>
+          <div class="relative fade-in">
+            <div class="absolute -top-6 -right-6 w-52 h-52 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+            <img alt="Old Ceylon Coffee Plantation" class="relative z-10 rounded-2xl shadow-xl w-full aspect-[4/3] object-cover" src="images/tea.webp"/>
+            <div class="absolute bottom-4 left-4 bg-[#0d631b]/90 text-white px-4 py-2 rounded-lg">
+              <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]">Pre-1867</p>
+              <p class="text-sm font-semibold">The Coffee Era</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── James Taylor Section ── -->
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <div class="relative fade-in order-2 lg:order-1">
+            <div class="absolute -top-6 -left-6 w-52 h-52 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+            <img alt="Loolecondera Estate" class="relative z-10 rounded-2xl shadow-xl w-full aspect-[4/3] object-cover" src="images/nuwaraeliya.jpg"/>
+            <div class="absolute bottom-4 right-4 bg-[#0d631b]/90 text-white px-4 py-2 rounded-lg text-right">
+              <p class="text-xs font-bold uppercase tracking-widest text-[#a3f69c]">1867</p>
+              <p class="text-sm font-semibold">Loolecondera Estate</p>
+            </div>
+          </div>
+          <div class="fade-in order-1 lg:order-2">
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">The Founding Father</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-6">James Taylor & the First Plantation</h2>
+            <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+              <p>
+                Into the ruins of the coffee industry stepped James Taylor — a young Scottish planter who had arrived in Ceylon in 1851 at the age of sixteen. Taylor had been experimenting with tea cultivation on a modest plot on the Loolecondera Estate near Kandy, curious about the plant's potential to replace the devastated coffee crop.
+              </p>
+              <p>
+                In 1867, Taylor planted the first commercial tea estate on nineteen acres of the Loolecondera hillside in Kandy district. Using seeds obtained from the Calcutta Botanical Gardens and techniques he had studied from Assam, he methodically cultivated and processed the leaves in a small factory built with his own hands.
+              </p>
+              <p>
+                By 1872 he had built a fully operational factory, and by 1873 the first shipment of Ceylon tea — just 23 pounds — was sold at auction in London to an astonished market. The quality was described as exceptional. Ceylon's tea industry was born.
+              </p>
+              <p>
+                Tragically, James Taylor died in 1892, never fully receiving the recognition his pioneering work deserved. He is today celebrated as the Father of Ceylon Tea.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Timeline Section ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-16 fade-in">
+          <span class="font-label-caps text-label-caps text-secondary block mb-3">Milestones</span>
+          <h2 class="font-h2 text-h2 text-on-background mb-4">150 Years of Ceylon Tea</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+            From a single nineteen-acre plot to a global industry that employs over one million people — the milestones that shaped Sri Lanka's greatest export.
+          </p>
+        </div>
+
+        <!-- Desktop Timeline -->
+        <div class="hidden md:block relative">
+          <div class="timeline-line"></div>
+          <div class="space-y-16">
+
+            <!-- 1824 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm inline-block text-left max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#0d631b] block mb-2">1824</span>
+                  <h3 class="font-h3 text-h3 text-on-background mb-2">First Tea Plant Arrives</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">The first tea plant is brought to Sri Lanka from China and planted in the Royal Botanical Gardens at Peradeniya, Kandy — purely as a botanical curiosity, with no commercial intent.</p>
+                </div>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <img alt="Peradeniya Botanical Gardens" src="images/kandy-region.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover"/>
+              </div>
+            </div>
+
+            <!-- 1867 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <img alt="Loolecondera Estate" src="images/dimbula.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover ml-auto"/>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <div class="bg-[#0d631b] rounded-xl p-6 shadow-sm inline-block max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#a3f69c] block mb-2">1867</span>
+                  <h3 class="font-h3 text-h3 text-white mb-2">First Commercial Plantation</h3>
+                  <p class="font-body-sm text-body-sm text-[#cceecc]">James Taylor plants the first commercial tea crop on 19 acres at Loolecondera Estate, Kandy. This is the founding moment of the entire Ceylon tea industry.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 1872 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm inline-block text-left max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#0d631b] block mb-2">1872</span>
+                  <h3 class="font-h3 text-h3 text-on-background mb-2">First Processing Factory</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Taylor builds the first tea-processing factory at Loolecondera, enabling large-scale rolling and drying of leaves. The following year, Ceylon tea reaches London auction for the first time.</p>
+                </div>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <img alt="Tea Factory" src="images/uva.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover"/>
+              </div>
+            </div>
+
+            <!-- 1890 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <img alt="Tea Expansion" src="images/sabaragamuwa.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover ml-auto"/>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm inline-block max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#0d631b] block mb-2">1890s</span>
+                  <h3 class="font-h3 text-h3 text-on-background mb-2">Rapid National Expansion</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Tea plantations spread rapidly across the central highlands — Nuwara Eliya, Dimbula, Uva, and beyond. By 1890 the industry covers over 300,000 acres, replacing coffee entirely.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 1948 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm inline-block text-left max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#0d631b] block mb-2">1948</span>
+                  <h3 class="font-h3 text-h3 text-on-background mb-2">Independence & National Pride</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Ceylon gains independence from Britain. Tea, already the island's most valuable export, becomes a symbol of national identity and economic sovereignty for the newly independent nation.</p>
+                </div>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <img alt="Ceylon Independence" src="images/ruhuna.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover"/>
+              </div>
+            </div>
+
+            <!-- 1972 -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <img alt="Sri Lanka Branding" src="images/uda pussellawa tea.jpeg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover ml-auto"/>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0"></div>
+              <div class="w-1/2 pl-12">
+                <div class="bg-surface-container-low rounded-xl p-6 border border-surface-container shadow-sm inline-block max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#0d631b] block mb-2">1972</span>
+                  <h3 class="font-h3 text-h3 text-on-background mb-2">Ceylon Becomes Sri Lanka</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">The nation is renamed Sri Lanka, but the tea retains the iconic "Ceylon Tea" brand internationally — a name so trusted it was protected by law and remains the global mark of quality to this day.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Today -->
+            <div class="flex items-center gap-8 fade-in">
+              <div class="w-1/2 text-right pr-12">
+                <div class="bg-[#0d631b] rounded-xl p-6 shadow-sm inline-block text-left max-w-md">
+                  <span class="font-label-caps text-label-caps text-[#a3f69c] block mb-2">Today</span>
+                  <h3 class="font-h3 text-h3 text-white mb-2">A Global Icon</h3>
+                  <p class="font-body-sm text-body-sm text-[#cceecc]">Sri Lanka is the world's 4th largest tea producer and exporter, shipping over 300,000 tonnes annually to more than 100 countries. Tea employs over one million Sri Lankans and contributes over $1.25 billion to the national economy each year.</p>
+                </div>
+              </div>
+              <div class="timeline-dot z-10 flex-shrink-0" style="background:#a3f69c; border-color:#0d631b;"></div>
+              <div class="w-1/2 pl-12">
+                <img alt="Modern Ceylon Tea" src="images/tea harvesting.jpg" class="rounded-xl shadow-md w-full max-w-xs h-36 object-cover"/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mobile Timeline -->
+        <div class="md:hidden space-y-6">
+          <!-- reuse same events as simple stacked cards -->
+          <div class="bg-surface-container-low rounded-xl p-5 border border-surface-container fade-in">
+            <span class="font-label-caps text-label-caps text-[#0d631b] block mb-1">1824</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">First Tea Plant Arrives</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">The first tea plant is brought to Sri Lanka from China and planted at the Royal Botanical Gardens in Peradeniya, Kandy.</p>
+          </div>
+          <div class="bg-[#0d631b] rounded-xl p-5 fade-in">
+            <span class="font-label-caps text-label-caps text-[#a3f69c] block mb-1">1867</span>
+            <h3 class="font-h3 text-h3 text-white mb-2">First Commercial Plantation</h3>
+            <p class="font-body-sm text-body-sm text-[#cceecc]">James Taylor plants the first commercial tea crop on 19 acres at Loolecondera Estate — the founding moment of the Ceylon tea industry.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-5 border border-surface-container fade-in">
+            <span class="font-label-caps text-label-caps text-[#0d631b] block mb-1">1872</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">First Processing Factory</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Taylor builds the first tea-processing factory. By 1873 the first Ceylon tea reaches the London auction market.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-5 border border-surface-container fade-in">
+            <span class="font-label-caps text-label-caps text-[#0d631b] block mb-1">1890s</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Rapid National Expansion</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Tea plantations spread across the highlands. By 1890 they cover over 300,000 acres, replacing coffee entirely.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-5 border border-surface-container fade-in">
+            <span class="font-label-caps text-label-caps text-[#0d631b] block mb-1">1948</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Independence & National Pride</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Ceylon gains independence. Tea becomes a symbol of national identity and economic sovereignty.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-5 border border-surface-container fade-in">
+            <span class="font-label-caps text-label-caps text-[#0d631b] block mb-1">1972</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-2">Ceylon Becomes Sri Lanka</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">The nation is renamed but the "Ceylon Tea" brand is protected internationally — still the global gold standard.</p>
+          </div>
+          <div class="bg-[#0d631b] rounded-xl p-5 fade-in">
+            <span class="font-label-caps text-label-caps text-[#a3f69c] block mb-1">Today</span>
+            <h3 class="font-h3 text-h3 text-white mb-2">A Global Icon</h3>
+            <p class="font-body-sm text-body-sm text-[#cceecc]">Sri Lanka exports 300,000+ tonnes annually to 100+ countries, employing over one million people.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── The Ceylon Brand Section ── -->
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+          <div class="fade-in">
+            <span class="font-label-caps text-label-caps text-secondary block mb-3">The Brand</span>
+            <h2 class="font-h2 text-h2 text-on-background mb-6">What Makes Ceylon Tea Unique</h2>
+            <div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+              <p>
+                The term "Ceylon Tea" is not just a name — it is a legally protected geographical indication, much like Champagne or Darjeeling. Only tea grown, manufactured, and packed in Sri Lanka may carry the iconic Ceylon Tea logo: a golden lion holding a sword, encircled by the words "Ceylon Tea."
+              </p>
+              <p>
+                The uniqueness of Ceylon tea comes from the island's remarkable geography. Sri Lanka is a small island, yet within its borders exist seven distinct agro-climatic zones — each producing tea with completely different flavor profiles. High-grown teas from Nuwara Eliya (above 1,800m) are light and floral; mid-grown teas from Kandy are full-bodied and robust; low-grown teas from Ruhuna are dark and intensely flavored.
+              </p>
+              <p>
+                Unlike many other tea-producing nations, Sri Lanka produces tea year-round due to its equatorial location. The monsoon seasons that affect different regions at different times actually produce the celebrated "quality seasons" — periods of intense flavor and aroma that connoisseurs prize above all.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-gutter fade-in">
+            <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+              <div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-on-primary-fixed-variant">landscape</span>
+              </div>
+              <h4 class="font-button text-button text-on-background mb-2">Unique Geography</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">7 distinct growing regions from sea level to 2,500m elevation on a single small island.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+              <div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-on-primary-fixed-variant">wb_sunny</span>
+              </div>
+              <h4 class="font-button text-button text-on-background mb-2">Year-Round Harvest</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Equatorial location means continuous production unlike most other tea-producing nations.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+              <div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-on-primary-fixed-variant">verified</span>
+              </div>
+              <h4 class="font-button text-button text-on-background mb-2">Protected Brand</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">The Ceylon Tea lion logo is a registered geographical indication — a legal guarantee of origin and quality.</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-surface-container shadow-sm">
+              <div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-on-primary-fixed-variant">front_hand</span>
+              </div>
+              <h4 class="font-button text-button text-on-background mb-2">Hand-Picked Only</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Every leaf is still hand-plucked by skilled workers — a centuries-old tradition that machine harvesting cannot replicate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Legacy & Economic Impact ── -->
+    <section class="py-xl bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-12 fade-in">
+          <span class="font-label-caps text-label-caps text-secondary block mb-3">Legacy</span>
+          <h2 class="font-h2 text-h2 text-on-background mb-4">Tea & the Soul of Sri Lanka</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+            Tea is not just Sri Lanka's biggest export — it is woven into the culture, the landscape, the economy, and the daily life of every Sri Lankan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div class="bg-surface-container-low rounded-xl p-8 border border-surface-container fade-in">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">people</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-3">1 Million+ Livelihoods</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              More than one million Sri Lankans — pluckers, factory workers, managers, exporters, and transporters — depend directly on the tea industry for their livelihood. Millions more are indirectly supported through related industries.
+            </p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-8 border border-surface-container fade-in">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">attach_money</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-3">$1.25 Billion Economy</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Ceylon tea contributes over $1.25 billion USD in annual foreign exchange earnings, making it one of the single most important contributors to the Sri Lankan national economy and a cornerstone of the country's trade balance.
+            </p>
+          </div>
+          <div class="bg-surface-container-low rounded-xl p-8 border border-surface-container fade-in">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">public</span>
+            <h3 class="font-h3 text-h3 text-on-background mb-3">Exported to 100+ Nations</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Ceylon tea is exported to more than 100 countries across every continent. The largest markets include Russia, the Middle East, Iran, Turkey, China, the United Kingdom, and the United States — testament to its universal appeal.
+            </p>
+          </div>
+        </div>
+
+        <!-- Full-width quote -->
+        <div class="mt-16 bg-[#0d631b] rounded-2xl p-12 text-center relative overflow-hidden fade-in">
+          <div class="absolute top-0 right-0 p-8 opacity-10">
+            <span class="material-symbols-outlined text-[160px]">format_quote</span>
+          </div>
+          <div class="relative z-10 max-w-3xl mx-auto">
+            <p class="text-2xl text-white italic font-light leading-relaxed" style="font-family:'Georgia', serif;">
+              "Sri Lanka may be a small island, but in the world of tea it stands as a giant — its name spoken with reverence in every tea house from London to Tokyo, from Moscow to New York."
+            </p>
+            <p class="mt-6 font-label-caps text-label-caps text-[#a3f69c] tracking-widest">
+              Ceylon Tea Board
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA Section ── -->
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div class="bg-primary p-12 rounded-2xl relative overflow-hidden text-center text-on-primary">
+          <div class="absolute top-0 right-0 p-8 opacity-10">
+            <span class="material-symbols-outlined text-[160px]">eco</span>
+          </div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="font-h2 text-h2 mb-4">Continue Exploring</h2>
+            <p class="font-body-lg text-body-lg mb-8 text-primary-fixed/80">
+              Discover how the tea is grown today, explore the six types of Ceylon tea, or plan your own visit to a historic estate.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="Tea types/Teatypes.html">
+                <button class="bg-white text-primary px-8 py-4 rounded-lg font-button text-button hover:bg-primary-fixed active:scale-95 transition-transform">
+                  Explore Tea Types
+                </button>
+              </a>
+              <a href="Cultivation page/Cultivation.html">
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-button text-button hover:bg-white/10 active:scale-95 transition-all">
+                  Cultivation Process
+                </button>
+              </a>
+              <a href="contact page/contact.html">
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-button text-button hover:bg-white/10 active:scale-95 transition-all">
+                  Plan a Visit
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="w-full py-12 border-t border-stone-200 bg-stone-50 dark:bg-stone-900">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px] mx-auto px-6 md:px-12">
+
+      <div>
+        <div class="mb-4">
+          <a href="index.html">
+            <img src="images/logo.png" alt="TeaLeaf Logo" class="h-10 w-auto object-contain"/>
+          </a>
+        </div>
+        <p class="font-body-sm text-stone-500 max-w-sm mb-6">
+          Preserving the century-old traditions of Sri Lankan tea cultivation while embracing sustainable futures.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">public</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">mail</span>
+          <span class="material-symbols-outlined text-stone-400 hover:text-primary cursor-pointer">share</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Heritage</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Privacy Policy</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Sustainability</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#2E7D32] dark:text-green-400 mb-2">Company</span>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Careers</a>
+          <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-100 underline decoration-stone-300 underline-offset-4" href="#">Estate Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-stone-200 dark:border-stone-800">
+      <p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-stone-500">
+        © 2026 TEALEAF - Leafora Tea Co. All rights reserved
+      </p>
+    </div>
+  </footer>
+
+
+
+  <!-- Scroll Fade-In Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
