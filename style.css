@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* ============================================
+   TeaLeaf - The Knowledge Hub
+   styles.css
+   ============================================ */
+
+/* ---------- Material Symbols ---------- */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ---------- Hero Gradient Overlay ---------- */
+.hero-gradient {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(251, 249, 248, 1) 100%
+    );
+}
+
+/* ============================================
+   TAILWIND CUSTOM THEME (reference only)
+   These are defined in tailwind.config and
+   applied via utility classes in HTML.
+   ============================================ */
+
+/*
+  COLORS (used as Tailwind class names, e.g. bg-primary, text-on-surface)
+  --primary:                  #0d631b
+  --primary-container:        #2e7d32
+  --on-primary:               #ffffff
+  --on-primary-container:     #cbffc2
+  --primary-fixed:            #a3f69c
+  --primary-fixed-dim:        #88d982
+  --on-primary-fixed:         #002204
+  --on-primary-fixed-variant: #005312
+  --inverse-primary:          #88d982
+
+  --secondary:                #75584d
+  --secondary-container:      #fed7ca
+  --secondary-fixed:          #ffdbce
+  --secondary-fixed-dim:      #e4beb2
+  --on-secondary:             #ffffff
+  --on-secondary-container:   #795c51
+  --on-secondary-fixed:       #2b160f
+  --on-secondary-fixed-variant: #5b4137
+
+  --tertiary:                 #555744
+  --tertiary-container:       #6e6f5b
+  --tertiary-fixed:           #e4e4cc
+  --tertiary-fixed-dim:       #c8c8b0
+  --on-tertiary:              #ffffff
+  --on-tertiary-container:    #f3f3da
+  --on-tertiary-fixed:        #1b1d0e
+  --on-tertiary-fixed-variant:#474836
+
+  --surface:                  #fbf9f8
+  --surface-bright:           #fbf9f8
+  --surface-dim:              #dcd9d9
+  --surface-variant:          #e4e2e1
+  --surface-container-lowest: #ffffff
+  --surface-container-low:    #f5f3f3
+  --surface-container:        #f0eded
+  --surface-container-high:   #eae8e7
+  --surface-container-highest:#e4e2e1
+  --surface-tint:             #1b6d24
+  --inverse-surface:          #303030
+
+  --background:               #fbf9f8
+  --on-background:            #1b1c1c
+  --on-surface:               #1b1c1c
+  --on-surface-variant:       #40493d
+  --inverse-on-surface:       #f2f0f0
+
+  --outline:                  #707a6c
+  --outline-variant:          #bfcaba
+
+  --error:                    #ba1a1a
+  --on-error:                 #ffffff
+  --error-container:          #ffdad6
+  --on-error-container:       #93000a
+
+  BORDER RADIUS
+  --radius-default: 0.25rem
+  --radius-lg:      0.5rem
+  --radius-xl:      0.75rem
+  --radius-full:    9999px
+
+  SPACING
+  --xs:        4px
+  --sm:        12px
+  --base:      8px
+  --md:        24px
+  --gutter:    24px
+  --lg:        40px
+  --xl:        64px
+  --container: 1280px
+
+  FONT FAMILY
+  All: Plus Jakarta Sans
+
+  FONT SIZES
+  --text-h1:        40px / lh 1.2 / ls -0.02em / fw 700
+  --text-h2:        32px / lh 1.3 / ls -0.01em / fw 600
+  --text-h3:        24px / lh 1.4 / ls 0     / fw 600
+  --text-body-lg:   18px / lh 1.6 / ls 0     / fw 400
+  --text-body-md:   16px / lh 1.5 / ls 0     / fw 400
+  --text-body-sm:   14px / lh 1.5 / ls 0     / fw 400
+  --text-button:    14px / lh 1.0 / ls 0.02em / fw 600
+  --text-label-caps:12px / lh 1.0 / ls 0.05em / fw 700
+*/
+
+
+/* ============================================
+   HERO SLIDESHOW
+   ============================================ */
+
+/* Container fills the entire hero background */
+.slideshow-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Each slide hidden by default */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* Active slide visible */
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Arrow Buttons ---------- */
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.slide-arrow:hover {
+    background: rgba(46, 125, 50, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slide-arrow.left  { left: 24px; }
+.slide-arrow.right { right: 24px; }
+
+/* ---------- Dot Indicators ---------- */
+.slide-dots {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background: #2E7D32;
+    border-color: #2E7D32;
+    transform: scale(1.3);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
